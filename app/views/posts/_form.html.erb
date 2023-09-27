@@ -1,4 +1,3 @@
-<%#= turbo_frame_tag "post_form_x" %>
 <dialog open>
 <article>
 <h1>Post</h1>
@@ -26,10 +25,12 @@
   </div>
 </div>
   <div>
+  <!-- submit goes to controller#create method -->
     <%= form.submit %>
+
+  <!-- submit goes simply to all posts -->
     <%= link_to "Cancel", posts_path %>
   </div>
 <% end %>
 </article>
 </dialog>
-<%# end %>

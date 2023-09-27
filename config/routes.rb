@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :posts do
+    # turbo stream in post_controller need post request in order to work
     member { post :new; post :edit }
   end
 

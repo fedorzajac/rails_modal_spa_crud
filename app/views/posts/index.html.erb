@@ -6,7 +6,11 @@
 
 
 <%= turbo_frame_tag "post_form" do %>
-    <%#= render "tweets/form", tweet: @tweet %>
+<!-- 
+content of this frame will be replaced with form code. as the form code is modal/dialog it will be overlayed
+the button_to ensures that request/response will be handled within turbo_frame boundaries and it will not affect whole page.
+upon click, button_to will dissapear. it will be placed back with `new_post_link.html.erb`
+ -->
 <%= button_to "New post", new_post_path, method: :post %>
 <% end %>
 

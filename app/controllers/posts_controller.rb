@@ -12,7 +12,9 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
+    # new_post_path handler method # or new_YourModelName_path 
     @post = Post.new
+    # it will return / draw the form.
     respond_to do |format|
       format.turbo_stream { render turbo_stream: turbo_stream.update('post_form', partial: "posts/form", locals: { post: @post }) }
     end
