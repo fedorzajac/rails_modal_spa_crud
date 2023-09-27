@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+<%= Time.now %>
+<%= turbo_stream_from "posts" %>
+<h1>Posts</h1>
+
+
+
+<%= turbo_frame_tag "post_form" do %>
+    <%#= render "tweets/form", tweet: @tweet %>
+<%= button_to "New post", new_post_path, method: :post %>
+<% end %>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <%= render post %>
+    
+  <% end %>
+</div>
+
